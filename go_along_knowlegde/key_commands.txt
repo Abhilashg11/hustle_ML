@@ -1,0 +1,2 @@
+pip freeze > requirements.txt (This command lists all installed packages and their versions in the current environment and saves them to requirements.txt.)
+pip install -r requirements.txt
