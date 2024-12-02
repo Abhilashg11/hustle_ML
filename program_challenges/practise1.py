@@ -110,4 +110,11 @@
 # obj1()
 
 
-
+x = int(input())
+y = int(input())
+z = int(input())
+n = int(input())
+    
+l = [[x,y,z] for i in range(x+1) for ji in range(y+1) for k in range(z+1) if(x+y+z)!=n]
+print(l)
+    
