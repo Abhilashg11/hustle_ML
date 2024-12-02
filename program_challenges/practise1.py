@@ -68,18 +68,46 @@
 # # Usage
 # print(example_function(1000000,"time"))
 
-class Data:
-    def __init__(self,a,b,c):
-        self.a = a
-        self.b = b
-        self.c = c
+# class Data:
+#     def __init__(self,a,b,c):
+#         self.a = a
+#         self.b = b
+#         self.c = c
         
     
-    def compute(self,a,b,c):
-        r = self.a+self.b+self.c
-        return r
+#     def compute(self,a,b,c):
+#         r = self.a+self.b+self.c
+#         return r
 
 
-obj1= Data(2,2,2)
-res = obj1.compute()
-print(res)
+# obj1= Data(2,2,2)
+# res = obj1.compute()
+# print(res)
+
+# def understand(greet,*args,**kwargs):
+#     p = kwargs.get("Punch","!-098789i")
+#     end = kwargs.get("elf")
+#     for i in args:
+
+#         print(f"{greet} {i} {p}")
+
+#     print(end)
+
+# understand("hello","alice","herald","tiffny",Punch=".",elf="Bye")
+
+
+# class counter:
+#     def __init__(self):
+#         self.count = 0
+    
+#     def __call__(self):
+#         self.count += 1
+#         print(self.count)
+
+# obj1 = counter()
+
+# obj1()
+# obj1()
+
+
+
