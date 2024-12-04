@@ -110,11 +110,9 @@
 # obj1()
 
 
-x = int(input())
-y = int(input())
-z = int(input())
-n = int(input())
+if __name__ == '__main__':
+    n = int(input())
+    arr = map(int, input().split())
+    print(list(arr[0]))
     
-l = [[x,y,z] for i in range(x+1) for ji in range(y+1) for k in range(z+1) if(x+y+z)!=n]
-print(l)
     
