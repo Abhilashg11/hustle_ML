@@ -108,11 +108,24 @@
 
 # obj1()
 # obj1()
+import re
+parts = '2h30m'
+hours = re.search(r'(\d+)h',parts)
+print("hh",hours.group(1))
 
-
-if __name__ == '__main__':
-    n = int(input())
-    arr = map(int, input().split())
-    print(list(arr[0]))
+hours = sum(int(part.replace('h','')) for part in parts if 'h' in part)
+# for part in parts:
+#     if 'h' in part:
+#         hours = int(part.replace('h', ''))  # Remove 'h' and convert to int
+#     elif 'm' in part:
+#         print("hi iam in elsif")
+#         minutes = int(part.replace('m', ''))  # Remove 'm' and convert to int
     
+#     # Convert hours to minutes and add minutes
+# total_minutes = hours * 60 + minutes
+# print(total_minutes)
+
+        
+        
+        
     
