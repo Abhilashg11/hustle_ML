@@ -48,7 +48,14 @@ class ModelTrainer:
                 "AdaBoost Regressor": AdaBoostRegressor(),
             }
 
-            model_report:dict = evaluate_model(x_train=x_train,y_train=y_train,y_test=y_test,x_test=x_test,models=models)
+            params={
+                "randomforest":{
+                    'criterion':['squared_error','friedman_mse'],
+                    'n_estimator':[4,5,6,8,7]
+                }
+            }
+
+            model_report:dict = evaluate_model(x_train=x_train,y_train=y_train,y_test=y_test,x_test=x_test,models=models,params=params)
 
             best_model_score = max(sorted(model_report.values()))
 
@@ -73,3 +80,4 @@ class ModelTrainer:
 
         except Exception as e:
             CustomExecption(e,sys)
+

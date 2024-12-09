@@ -111,47 +111,5 @@ class DataTransformation:
 
 
 
- @dataclass
-class datatransformconfig:
-    plk_file_path = os.path.join('artifacts','plkfile.plk')
-
-class transform:
-    def __init__(self):
-        self.dataplt_path = datatransformconfig()
-
-    def get_data_obj(self):
-        numerical_column = ["writing_score", "reading_score"]
-        categorical_column = [ "gender",
-                "race_ethnicity",
-                "parental_level_of_education",
-                "lunch",
-                "test_preparation_course",]\
-
-        num_pipeline = Pipeline(
-           steps = [('scalar',StandardScaler()),
-                    ('trrio',SimpleImputer())
-           ]
-        )
-
-        categorical_pipeline = Pipeline(
-            steps= [
-                ("fsgfd",OneHotEncoder())
-            ]
-        )
-
-        preprocessor=ColumnTransformer(
-            [
-                ('num_transo',num_pipeline,numerical_column),
-                ('cat_tarnfs',categorical_pipeline,categorical_column)
-            ]
-        )
-
-        return preprocessor
-
-        def transform_dta(self,train_csv,test_csv):
-            train = pd.read_csv(train_csv)
-            test = pd.read_csv(test_csv)
-            
-
 
 

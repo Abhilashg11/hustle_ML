@@ -1,14 +1,14 @@
 import os
 import sys
-from src.execption import CustomExecption
-from src.logger import logging
+
 import pandas as pd
 
 
 from sklearn.model_selection import train_test_split
-from dataclasses import dataclass
-
 from src.components.data_transformation import DataTransformation
+from dataclasses import dataclass
+from src.logger import logging
+from src.execption import CustomExecption
 from src.components.data_transformation import DataTransformationConfig
 from src.components.model_trainer import ModelTrainerConfig
 from src.components.model_trainer import ModelTrainer
@@ -59,37 +59,6 @@ if __name__ == "__main__":
     modeltrainer= ModelTrainer()
     print(modeltrainer.initiate_model_trainer(train_arr,test_arr))
 
-@dataclass
-class dataingestioncongig:
-    train_data_path:str = os.path.join('artifacts',"train.csv")
-    test_data_path:str = os.path.join('artifacts',"train.csv")
-    raw_data_path:str = os.path.join('artifacts',"train.csv")
-
-
-class data_ingestion:
-    def __init__(self):
-        self.dataingpath = dataingestioncongig()
-    def ingestion(self):
-        try:
-            df = pd.read_csv('notebook\data\data.csv')
-            os.makedirs(os.path.dirname(self.dataingpath.raw_data_path),exist_ok=True)
-
-            df.to_csv(self.dataingpath.raw_data_path,index = False,header=True)
-
-            train_df,test_df = train_test_split(df,test_size=0.2)
-            train_df.to_csv(self.dataingpath.train_data_path,index=False,header=True)
-
-            return(
-                self.dataingpath.train_data_path,
-                self.dataingpath.test_data_path
-            )
-        except Exception as e:
-            CustomExecption(e,sys)
-
-        
-if __name__ =="__main__":
-    obj = data_ingestion()
-    train_data,test_dta = obj.ingestion
     
 
 
