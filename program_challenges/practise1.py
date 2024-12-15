@@ -107,13 +107,13 @@
 # obj1 = counter()
 
 # obj1()
-# obj1()
-import re
-parts = '2h30m'
-hours = re.search(r'(\d+)h',parts)
-print("hh",hours.group(1))
+# # obj1()
+# import re
+# parts = '2h30m'
+# hours = re.search(r'(\d+)h',parts)
+# print("hh",hours.group(1))
 
-hours = sum(int(part.replace('h','')) for part in parts if 'h' in part)
+# hours = sum(int(part.replace('h','')) for part in parts if 'h' in part)
 # for part in parts:
 #     if 'h' in part:
 #         hours = int(part.replace('h', ''))  # Remove 'h' and convert to int
@@ -121,9 +121,31 @@ hours = sum(int(part.replace('h','')) for part in parts if 'h' in part)
 #         print("hi iam in elsif")
 #         minutes = int(part.replace('m', ''))  # Remove 'm' and convert to int
     
-#     # Convert hours to minutes and add minutes
-# total_minutes = hours * 60 + minutes
-# print(total_minutes)
+# #     # Convert hours to minutes and add minutes
+# # total_minutes = hours * 60 + minutes
+# # print(total_minutes)
+l_m = []
+for _ in range(int(input())):
+    name = input()
+    marks = float(input())
+    l_m.append([name,marks])
+
+second = sorted(set([marks for name,marks in l_m]))[1]
+s = sorted([name for name,score in l_m if score == second])
+print(s)
+
+
+#     def fun(val):
+#         return val[1] 
+
+# l_m.sort(key = fun)
+# print(l_m[-2])
+
+# l = [["lm" ,2],['rh',3],['rt',4]]
+
+# l.sorted()
+# print(l)
+
 
         
         
