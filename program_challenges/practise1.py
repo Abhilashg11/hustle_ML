@@ -146,15 +146,24 @@
 # l.sorted()
 # print(l)
 
-# name , *line = input().split()
-# print(name,line)
-        
-        
-        
-def fun(**kwargs):
-    for k, val in kwargs.items():
-        print("%s == %s" % (k, val))
+if __name__=='__main__':
+    dic = {}
+    n = int(input())
+    for _ in range(n):
+        name,*marks = input().split()
+        dic[name] = marks
+    query = input()
+    print(dic)
+    marks = dic[query]
+    marks = list(map(int,marks))
+    tot = sum(marks)
+
+print("{:.2f}".format(tot))
+print(f"{tot:.2f}")
 
 
-# Driver code
-fun(s1='Geeks', s2='for', s3='Geeks')
+
+        
+        
+        
+    
