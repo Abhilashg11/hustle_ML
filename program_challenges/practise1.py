@@ -124,15 +124,15 @@
 # #     # Convert hours to minutes and add minutes
 # # total_minutes = hours * 60 + minutes
 # # print(total_minutes)
-l_m = []
-for _ in range(int(input())):
-    name = input()
-    marks = float(input())
-    l_m.append([name,marks])
+# l_m = []
+# for _ in range(int(input())):
+#     name = input()
+#     marks = float(input())
+#     l_m.append([name,marks])
 
-second = sorted(set([marks for name,marks in l_m]))[1]
-s = sorted([name for name,score in l_m if score == second])
-print(s)
+# second = sorted(set([marks for name,marks in l_m]))[1]
+# s = sorted([name for name,score in l_m if score == second])
+# print(s)
 
 
 #     def fun(val):
@@ -146,8 +146,15 @@ print(s)
 # l.sorted()
 # print(l)
 
+# name , *line = input().split()
+# print(name,line)
+        
+        
+        
+def fun(**kwargs):
+    for k, val in kwargs.items():
+        print("%s == %s" % (k, val))
 
-        
-        
-        
-    
+
+# Driver code
+fun(s1='Geeks', s2='for', s3='Geeks')
