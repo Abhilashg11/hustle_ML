@@ -146,20 +146,19 @@
 # l.sorted()
 # print(l)
 
-if __name__=='__main__':
-    dic = {}
+if __name__ == '__main__':
     n = int(input())
+    student_marks = {}
     for _ in range(n):
-        name,*marks = input().split()
-        dic[name] = marks
-    query = input()
-    print(dic)
-    marks = dic[query]
-    marks = list(map(int,marks))
-    tot = sum(marks)
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+    query_name = input()
+    marks = student_marks[query_name]
+    marks = float(sum(marks)/len(marks))
+    print(f"{marks:.2f}")
 
-print("{:.2f}".format(tot))
-print(f"{tot:.2f}")
+print(len([20,30,40]))
 
 
 
